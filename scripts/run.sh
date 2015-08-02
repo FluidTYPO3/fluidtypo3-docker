@@ -13,28 +13,27 @@ done
 echo "Database connect succesfull! Wait 5 more seconds to ensure mysql is really up and running"
 sleep 5
 
-/run-typo3.sh
-
-echo "=> Activate Extensions ..."
-echo "=> First flush caches to remove cache references to packages that may not be installed anymore"
-php typo3cms cache:flush
-if [ -f /app/typo3conf/PackageStates.php ]; then
-    echo "=> Delete old package states as it must be rebuild for current composer.json config"
-    rm /app/typo3conf/PackageStates.php
+if [ -f /app/typo3conf/LocalConfiguration.php ]; then
+    rm /app/typo3conf/LocalConfiguration.php
 fi
 
-php typo3cms extension:uninstall css_styled_content
-php typo3cms extension:install vhs
-php typo3cms extension:install flux
-php typo3cms extension:install fluidcontent
-php typo3cms extension:install fluidcontent_core
-php typo3cms extension:install fluidpages
-php typo3cms extension:install site
+/run-typo3.sh
 
-echo "=> Regenerate the package states ..."
-php typo3cms install:generatepackagestates
-echo "=> Flush caches again"
-php typo3cms cache:flush
+echo "=> Regenerate the package states file ..."
+php /app/typo3cms install:generatepackagestates
+
+echo "=> Activate Extensions as needed ..."
+php /app/typo3cms extension:uninstall css_styled_content
+php /app/typo3cms extension:install builder
+php /app/typo3cms extension:install vhs
+php /app/typo3cms extension:install flux
+php /app/typo3cms extension:install fluidcontent
+php /app/typo3cms extension:install fluidcontent_core
+php /app/typo3cms extension:install fluidpages
+php /app/typo3cms extension:install site
+
+echo "=> Keep calm and flush all caches"
+php /app/typo3cms cache:flush
 
 echo "=> Done! Ready to use!"
 
@@ -42,6 +41,8 @@ if [ -f /var/run/apache2/apache2.pid ]; then
     rm /var/run/apache2/apache2.pid
 fi
 
-tail -f /app/typo3temp/logs/typo3.log &
+if [ -f /app/typo3temp/logs/typo3.log ]; then
+    tail -f /app/typo3temp/logs/typo3.log &
+fi
 
 /run.sh
