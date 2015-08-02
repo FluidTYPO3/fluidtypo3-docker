@@ -1,0 +1,19 @@
+web:
+  image: fluidtypo3:latest
+  links:
+    - db
+  ports:
+    - "80:80"
+  environment:
+    DB_HOST: "db"
+    DB_PASS: "tF40c7E3Aud5aQ4Nv"
+    DB_PORT: "3306"
+    DB_NAME: "typo3"
+db:
+  image: tutum/mysql:5.5
+  environment:
+    MYSQL_USER: "admin"
+    MYSQL_PASS: "tF40c7E3Aud5aQ4Nv"
+    STARTUP_SQL: "/tmp/mounted/initialDatabase.sql"
+  volumes:
+    - database:/tmp/mounted

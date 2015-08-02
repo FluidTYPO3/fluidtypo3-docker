@@ -1,0 +1,16 @@
+{
+    "require": {
+        "typo3/cms": "6.2.*",
+        "fluidtypo3/builder": "*",
+        "fluidtypo3/site": "*",
+        "fluidtypo3/fluidpages": "*",
+        "fluidtypo3/fluidcontent": "*",
+        "fluidtypo3/fluidcontent_core": "*",
+        "fluidtypo3/vhs": "*",
+        "typo3-ter/typo3-console": "*"
+    },
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "preferred-install": "dist"
+    }
+}
