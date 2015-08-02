@@ -1076,7 +1076,7 @@ CREATE TABLE `pages` (
   KEY `alias` (`alias`),
   KEY `determineSiteRoot` (`deleted`,`hidden`,`is_siteroot`),
   KEY `uuid` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1683,7 +1683,7 @@ CREATE TABLE `sys_file_storage` (
 
 LOCK TABLES `sys_file_storage` WRITE;
 /*!40000 ALTER TABLE `sys_file_storage` DISABLE KEYS */;
-INSERT INTO `sys_file_storage` VALUES (1,0,1427443461,1427443461,0,0,0,'fileadmin/ (auto-created)','This is the local fileadmin/ directory. This storage mount has been created automatically by TYPO3.','Local','<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>\n<T3FlexForms>\n    <data>\n        <sheet index=\"sDEF\">\n            <language index=\"lDEF\">\n                <field index=\"basePath\">\n                    <value index=\"vDEF\">fileadmin/</value>\n                </field>\n                <field index=\"pathType\">\n                    <value index=\"vDEF\">relative</value>\n                </field>\n                <field index=\"caseSensitive\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n            </language>\n        </sheet>\n    </data>\n</T3FlexForms>',1,1,1,1,1,NULL,''),(2,0,1429793224,1427443767,1,0,0,'Alfresco CMIS','An Alfresco CMIS Storage','cmis','<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>\n<T3FlexForms>\n    <data>\n        <sheet index=\"sDEF\">\n            <language index=\"lDEF\">\n                <field index=\"basePath\">\n                    <value index=\"vDEF\"></value>\n                </field>\n                <field index=\"pathType\">\n                    <value index=\"vDEF\">relative</value>\n                </field>\n                <field index=\"caseSensitive\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n                <field index=\"repository\">\n                    <value index=\"vDEF\">default</value>\n                </field>\n                <field index=\"folder\">\n                    <value index=\"vDEF\">4e57901a-d6ec-4031-bc59-2a476b3708d5</value>\n                </field>\n            </language>\n        </sheet>\n    </data>\n</T3FlexForms>',0,1,0,1,1,'1:/_temp_','5daa3500-f766-4035-af4c-d1d636cc678c');
+INSERT INTO `sys_file_storage` VALUES (1,0,1427443461,1427443461,0,0,0,'fileadmin/ (auto-created)','This is the local fileadmin/ directory. This storage mount has been created automatically by TYPO3.','Local','<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>\n<T3FlexForms>\n    <data>\n        <sheet index=\"sDEF\">\n            <language index=\"lDEF\">\n                <field index=\"basePath\">\n                    <value index=\"vDEF\">fileadmin/</value>\n                </field>\n                <field index=\"pathType\">\n                    <value index=\"vDEF\">relative</value>\n                </field>\n                <field index=\"caseSensitive\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n            </language>\n        </sheet>\n    </data>\n</T3FlexForms>',1,1,1,1,1,NULL,'');
 /*!40000 ALTER TABLE `sys_file_storage` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2081,7 +2081,7 @@ CREATE TABLE `sys_template` (
   KEY `roottemplate` (`deleted`,`hidden`,`root`),
   KEY `tx_realurl` (`root`,`hidden`),
   KEY `uuid` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
